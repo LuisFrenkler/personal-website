@@ -1,0 +1,165 @@
+:root {
+  --bg: #e7f3fb;
+  --ink: #14598a;
+  --blue: #1f78b4;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.45;
+}
+
+a {
+  color: inherit;
+  text-underline-offset: 0.16em;
+}
+
+a:hover { color: var(--blue); }
+
+.page {
+  width: min(1120px, calc(100% - 3rem));
+  margin: 0 auto;
+  padding: 1.35rem 0 2.5rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.first {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+.name,
+.lang {
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--blue);
+}
+
+.hero {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+h1 {
+  margin: 0;
+  color: var(--blue);
+  font-size: clamp(3.1rem, 6.4vw, 5.35rem);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 0.96;
+}
+
+.portrait {
+  width: min(100%, 360px);
+  aspect-ratio: 4 / 5;
+  justify-self: end;
+  object-fit: cover;
+  object-position: 58% 20%;
+}
+
+.intro {
+  max-width: 36rem;
+  margin: 4.5rem 0;
+  font-size: 1.2rem;
+}
+
+.now {
+  display: grid;
+  grid-template-columns: 9.5rem 1fr;
+  gap: 2rem 2rem;
+  margin: 0 0 7rem;
+}
+
+.now h2 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.now p { margin: 0; }
+.now p + p { margin-top: 0.85rem; }
+
+.legal {
+  max-width: 40rem;
+  padding: 4.5rem 0 5rem;
+}
+
+.legal h1 {
+  font-size: clamp(2.6rem, 5vw, 4rem);
+  margin-bottom: 2rem;
+}
+
+.legal h2 {
+  margin: 2.4rem 0 0.7rem;
+  color: var(--blue);
+  font-size: 1.35rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+}
+
+.legal p { margin: 0 0 0.85rem; }
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  align-items: start;
+  font-weight: 600;
+}
+
+footer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+}
+
+footer li + li { margin-top: 0.35rem; }
+
+.place {
+  margin: 0.2rem 0 0;
+  font-weight: 400;
+}
+
+@media (max-width: 760px) {
+  .first { min-height: 0; }
+
+  .hero {
+    min-height: 0;
+    flex: none;
+    grid-template-columns: 1fr;
+    padding: 1.5rem 0 2.5rem;
+  }
+
+  .portrait {
+    order: -1;
+    width: 210px;
+    justify-self: start;
+  }
+
+  h1 { font-size: clamp(2.7rem, 12vw, 3.6rem); }
+
+  .now {
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+    margin-bottom: 4rem;
+  }
+
+  .legal { padding-top: 2.5rem; }
+}
